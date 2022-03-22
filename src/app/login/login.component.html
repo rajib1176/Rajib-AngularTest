@@ -1,0 +1,9 @@
+<form #userform="ngForm">
+    <input #nameField="ngModel" type="text" name="username" [(ngModel)]="user.username" placeholder="Username" required>
+    <span *ngIf="nameField.invalid && nameField.touched">please put username here</span>
+    <br><br/>
+    <input #passwordField="ngModel" type="password" name="password" [(ngModel)]="user.password" placeholder="Password" required>
+    <span *ngIf="passwordField.invalid && passwordField.touched">Password is Menadtory</span>
+    <br><br/>
+    <input type="button" [disabled]="userform.invalid" value="Login" (click)="doLogin()">
+    </form>
